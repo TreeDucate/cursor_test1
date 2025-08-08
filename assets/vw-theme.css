@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+/* Volkswagen-inspired theme (unofficial) */
+:root {
+  --vw-blue: #001E50;
+  --vw-light-blue: #00A3E0;
+  --vw-slate: #6C757D;
+  --vw-silver: #B0BEC5;
+  --vw-charcoal: #263238;
+  --bg: #f7f9fb;
+  --white: #ffffff;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--vw-charcoal);
+  background: var(--bg);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--vw-blue);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.titles h1 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--vw-blue);
+}
+
+.subtitle {
+  color: var(--vw-slate);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid #e6ecf2;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.control label {
+  display: block;
+  font-size: 12px;
+  color: var(--vw-slate);
+  margin-bottom: 6px;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.kpi-card {
+  background: var(--white);
+  border: 1px solid #e6ecf2;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.kpi-title {
+  font-size: 12px;
+  color: var(--vw-slate);
+}
+
+.kpi-value {
+  font-size: 24px;
+  color: var(--vw-blue);
+  font-weight: 700;
+}
+
+.kpi-delta {
+  font-size: 12px;
+  color: var(--vw-light-blue);
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.chart {
+  background: var(--white);
+  border: 1px solid #e6ecf2;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.table-wrap {
+  background: var(--white);
+  border: 1px solid #e6ecf2;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 12px;
+}
+
+.footer {
+  text-align: center;
+  color: var(--vw-slate);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Plotly override accents */
+.js-plotly-plot .plotly .gtitle {
+  fill: var(--vw-blue) !important;
+}
+.js-plotly-plot .plotly .legendtext {
+  fill: var(--vw-charcoal) !important;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .controls { grid-template-columns: repeat(2, 1fr); }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .charts-grid { grid-template-columns: 1fr; }
+}
